@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: microsoft/dotnet:2-sdk
+    steps:
+        - checkout
+        - run:
+            name: Restore Packages
+            command:
+                dotnet restore
+        - run:
+            name: Build Solution
+            command:
+                dotnet build
+        - run:
+            name: Test Solution
+            command:
+                dotnet test

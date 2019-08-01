@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>Tradeprint</RootNamespace>
+    <ApplicationIcon />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <SignAssembly>false</SignAssembly>
+    <PackageIconUrl>https://secure.gravatar.com/avatar/d22bdc540544d34e8069c5218a29989a</PackageIconUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Company>Tradeprint</Company>
+    <Product>Tradeprint SDK</Product>
+    <Authors>Miroslaw Majka</Authors>
+    <Version>1.1.0</Version>
+    <PackageId>TradeprintSdk</PackageId>
+    <AssemblyName>TradeprintSdk</AssemblyName>
+    <RepositoryUrl>https://github.com/Tradeprint/tradeprint-dotnet-sdk</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>Tradeprint Microsoft .NET SDK</Description>
+    <PackageReleaseNotes>First official release of the .NET Tradeprint SDK.</PackageReleaseNotes>
+    <PackageProjectUrl>https://www.tradeprint.co.uk/tradeprint-api</PackageProjectUrl>
+    <PackageTags>printing,sdk</PackageTags>
+    <Copyright>Tradeprint</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="NLog" Version="4.6.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
