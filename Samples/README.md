@@ -42,17 +42,17 @@ The samples provided below reflect the calls available in the Tradeprint API (ht
 * [Upload or Replace Artwork](UploadReplaceArtworkSample.cs)
 * [Get Order Status by ID](GetOrderStatusByIdSample.cs)
 * [Fetch Orders by References](FetchOrdersByReferenceSample.cs)
-* [Cancel an Order Item](TODO)
-* [Retry Payment](TODO)
+* [Cancel an Order Item](CancelOrderItemSample.cs)
+* [Retry Payment](RetryPaymentSample.cs)
 
 ### Product Service
 
-* [Request Price Lists for Multiple Products](TODO)
-* [Request Price List for Single Product](TODO)
-* [Get All Products Attributes](TODO)
-* [Get Attributes for Specific Product](TODO)
-* [Request Product Quantities](TODO)
-* [Get Expected Delivery Date](TODO)
+* [Request Price Lists for Multiple Products](PriceListsMultipleProductsSample.cs)
+* [Request Price List for Single Product](PriceListSingleProductSample.cs)
+* [Get All Products Attributes](GetAllProductsAttributesSample.cs)
+* [Get Attributes for Specific Product](GetSpecificProductAttributesSample.cs)
+* [Request Product Quantities](ProductQuantitiesSample.cs)
+* [Get Expected Delivery Date](GetExpectedDeliveryDateSample.cs)
 
 ## Production Environment
 

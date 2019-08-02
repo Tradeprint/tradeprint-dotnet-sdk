@@ -14,7 +14,7 @@ namespace Samples
         {
             var sdkSubmitNewOrderRequest = sdk.OrderService
                 .ValidateOrder()
-                .SetOrderReference("OPTIONAL_ORDER_REFERENCE")
+                .SetOrderReference("OPTIONAL_ORDER_REFERENCE")  // Optional
                 .SetCurrency()
                 .SetBillingAddress(TestData.TEST_BILLING_ADDRESS);
 

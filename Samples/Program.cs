@@ -32,6 +32,7 @@ namespace Samples
 
                 // Uncomment the call you want to test and edit the relevant "Sample" code file
 
+                // ORDER SERVICE CALLS
                 //result = await SubmitNewOrderSample.CallRequest(sdk);
                 //result = await ValidateOrderSample.CallRequest(sdk);
                 //result = await GetOrderStatusByIdSample.CallRequest(sdk);
@@ -40,7 +41,16 @@ namespace Samples
                 //result = await CancelOrderItemSample.CallRequest(sdk);
                 //result = await RetryPaymentSample.CallRequest(sdk);
 
-                Console.WriteLine($"JSON result: \"{result.SerializedResult}\"");
+                // PRODUCT SERVICE CALLS
+                //result = await PriceListsMultipleProductsSample.CallRequest(sdk);
+                //result = await PriceListSingleProductSample.CallRequest(sdk);
+                //result = await GetAllProductsAttributesSample.CallRequest(sdk);
+                //result = await GetSpecificProductAttributesSample.CallRequest(sdk);
+                //result = await ProductQuantitiesSample.CallRequest(sdk);
+                //result = await GetExpectedDeliveryDateSample.CallRequest(sdk);
+
+                var nl = Environment.NewLine;
+                Console.WriteLine($"{nl}JSON result:{nl}\"{result.SerializedResult}\"{nl}");
             }
             catch (SdkLoginError e)
             {
