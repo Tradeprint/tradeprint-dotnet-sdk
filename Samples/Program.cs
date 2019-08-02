@@ -5,37 +5,63 @@ using Tradeprint;
 using Tradeprint.Environments;
 using Tradeprint.Errors;
 using Tradeprint.Model;
-using Tradeprint.Services;
 
 namespace Samples
 {
-    class Program
+    static class Program
     {
-        private static OrderService orderService;
-        private static ProductService productService;
-
         static async Task Main(string[] args)
         {
-            DotEnv.Config(false);
-
-            var username = Environment.GetEnvironmentVariable("API_USERNAME");
-            var password = Environment.GetEnvironmentVariable("API_PASSWORD");
-
-            var sdk = SDK.GetInstance();
-            sdk.SetEnvironment(EnvironmentName.Sandbox);
-            sdk.SetCredentials(username, password);
-            sdk.SetDebugging(true);
-
-            orderService = sdk.OrderService;
-            productService = sdk.ProductService;
-
             try
             {
-                await CallTradeprintApi();
+                /**
+                 * Using DotEnv to try and get environment variables from a local ".env" file
+                 * See the EnvTemplate\.env file an example
+                 */
+                DotEnv.Config(false);
+
+                var username = Environment.GetEnvironmentVariable("API_USERNAME");
+                var password = Environment.GetEnvironmentVariable("API_PASSWORD");
+
+                var sdk = SDK.GetInstance();
+                sdk.SetEnvironment(EnvironmentName.Sandbox);
+                sdk.SetCredentials(username, password);
+                sdk.SetDebugging(true);
+
+                SdkResult result = null;
+
+                // Uncomment the call you want to test and edit the relevant "Sample" code file
+
+                // ORDER SERVICE CALLS
+                //result = await SubmitNewOrderSample.CallRequest(sdk);
+                //result = await ValidateOrderSample.CallRequest(sdk);
+                //result = await GetOrderStatusByIdSample.CallRequest(sdk);
+                //result = await FetchOrdersByReferenceSample.CallRequest(sdk);
+                //result = await UploadReplaceArtworkSample.CallRequest(sdk);
+                //result = await CancelOrderItemSample.CallRequest(sdk);
+                //result = await RetryPaymentSample.CallRequest(sdk);
+
+                // PRODUCT SERVICE CALLS
+                //result = await PriceListsMultipleProductsSample.CallRequest(sdk);
+                //result = await PriceListSingleProductSample.CallRequest(sdk);
+                //result = await GetAllProductsAttributesSample.CallRequest(sdk);
+                //result = await GetSpecificProductAttributesSample.CallRequest(sdk);
+                //result = await ProductQuantitiesSample.CallRequest(sdk);
+                //result = await GetExpectedDeliveryDateSample.CallRequest(sdk);
+
+                var nl = Environment.NewLine;
+                Console.WriteLine($"{nl}JSON result:{nl}\"{result.SerializedResult}\"{nl}");
             }
-            catch (SdkError e)
+            catch (SdkLoginError e)
             {
-                Console.WriteLine("SDK ERROR");
+                Console.WriteLine("SDK LOGIN ERROR");
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.ErrorDetails);
+                Console.WriteLine(e.StackTrace.ToString());
+            }
+            catch (SdkRequestError e)
+            {
+                Console.WriteLine("SDK REQUEST ERROR");
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.ErrorDetails);
                 Console.WriteLine(e.StackTrace.ToString());
@@ -46,16 +72,6 @@ namespace Samples
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace.ToString());
             }
-        }
-
-        private static async Task CallTradeprintApi()
-        {
-            // TODO: refactor and include all samples
-        }
-
-        private static void PrintSerialized(SdkResult sdkResult)
-        {
-            Console.WriteLine($"{Environment.NewLine}{sdkResult.SerializedResult}{Environment.NewLine}");
         }
     }
 }

@@ -19,19 +19,39 @@ Tradeprint API Documentation: https://docs.sandbox.tradeprint.io.
 
 ## Requirements
 
-* Microsoft .NET Core 2
-* Microsoft Visual Studio
+* Microsoft .NET Core 2.2 (https://dotnet.microsoft.com/download)
+* Microsoft Visual Studio (https://visualstudio.microsoft.com/)
 
 ## Installation
 
+Within your Visual Studio project you can install a new NuGet package (https://www.nuget.org/packages/TradeprintSdk).
+
+Using the DotNet CLI:
 ```sh
 dotnet add package TradeprintSdk
 ```
-or via PowerShell
+or via PowerShell:
 ```sh
-PM> Install-Package TradeprintSdk
+Install-Package TradeprintSdk
 ```
+
+## API Credentials
+
+You need a set of valid *Sandbox* or *Production* credentials to access the Tradeprint Ordering and Products services.
+
+Please get in touch at api(at)tradeprint.io or through our main https://www.tradeprint.co.uk/tradeprint-api website to be provided with a username and a password.
+
+When you have a set of credentials then you can specify them in your code, e.g.:
+```
+var sdk = SDK.GetInstance();
+sdk.SetEnvironment(EnvironmentName.Sandbox);
+sdk.SetCredentials("YOUR_API_USERNAME", "YOUR_API_PASSWORD");
+```
+
+**IMPORTANT** 
+
+A solution configured with valid Production credentials and pointing at the Production environment will be communicating with live Tradeprint ordering system!
 
 ## Usage
 
-For read the [Samples README](Samples/README.md) for usage details.
+For read the [Samples README](https://github.com/Tradeprint/tradeprint-dotnet-sdk/blob/master/Samples/README.md) for usage details.
