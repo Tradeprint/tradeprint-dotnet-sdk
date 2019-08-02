@@ -1,3 +1,60 @@
-﻿# Code Samples and Usage
+﻿# Tradeprint .NET SDK Code Samples
 
-TODO
+## General Usage
+
+Welcome to the code samples repository. All of the sample follow the same initilisation procedure:
+```
+using Tradeprint;
+using Tradeprint.Environments;
+
+namespace ClientApplication
+{
+    static class SdkClient
+    {
+        public async static void Main()
+        {
+            var sdk = SDK.GetInstance();
+            sdk.SetEnvironment(EnvironmentName.Sandbox);
+            sdk.SetCredentials("YOUR_API_USERNAME", "YOUR_API_PASSWORD");
+            sdk.SetDebugging(true);
+
+            var orderService = sdk.OrderService;
+            var productService = sdk.ProductService; 
+        }
+    }
+}
+```
+With those statements in place you can use the `productService` or the `orderService` to get specific `Request` objects and execute them.
+
+You can use the main [Program.cs](Program.cs) entry point in the **Samples** project to test the sample requests individually or to construct call sequences.
+
+## Samples
+
+The samples provided below reflect the calls available in the Tradeprint API (https://docs.sandbox.tradeprint.io).
+
+### Order Service
+
+* [Submit New Order](SubmitNewOrderSample.cs)
+* [Validate Order](TODO)
+* [Upload or Replace Artwork](TODO)
+* [Get Order Status by ID](GetOrderStatusByIdSample.cs)
+* [Fetch Orders by References](TODO)
+* [Cancel an Order Item](TODO)
+* [Retry Payment](TODO)
+
+### Product Service
+
+* [Request Price Lists for Multiple Products](TODO)
+* [Request Price List for Single Product](TODO)
+* [Get All Products Attributes](TODO)
+* [Get Attributes for Specific Product](TODO)
+* [Request Product Quantities](TODO)
+* [Get Expected Delivery Date](TODO)
+
+## Production Environment
+
+When you are ready to integrate your solution with the production Tradeprint API you can switch out the environment statement to:
+```
+sdk.SetEnvironment(EnvironmentName.Production);
+```
+All the requests within your code will now be calling the real ordering systems within Tradeprint.
