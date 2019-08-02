@@ -5,15 +5,15 @@ using Tradeprint.Model;
 namespace Samples
 {
     /**
-     * Tradeprint API - Submit New Order
-     * https://docs.sandbox.tradeprint.io/?version=latest#7df5f1d2-2e24-43fd-894a-a2c3e306e7cb
+     * Tradeprint API - Validate Order
+     * https://docs.sandbox.tradeprint.io/?version=latest#b1822b88-b0f1-4fb2-b94d-de717a2971b7
      */
-    static class SubmitNewOrderSample
+    static class ValidateOrderSample
     {
         public async static Task<SdkResult> CallRequest(SDK sdk)
         {
             var sdkSubmitNewOrderRequest = sdk.OrderService
-                .SubmitNewOrder()
+                .ValidateOrder()
                 .SetOrderReference("OPTIONAL_ORDER_REFERENCE")
                 .SetCurrency()
                 .SetBillingAddress(TestData.TEST_BILLING_ADDRESS);

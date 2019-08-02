@@ -5,15 +5,15 @@ using Tradeprint.Model;
 namespace Samples
 {
     /**
-     * Tradeprint API - Get Order Status by ID
-     * https://docs.sandbox.tradeprint.io/?version=latest#ca75104b-eb43-40f8-9205-109dc2297327
+     * Tradeprint API - Retry Payment
+     * https://docs.sandbox.tradeprint.io/?version=latest#a4c34bda-065c-4d94-8125-db51304d7b7f7
      */
-    static class GetOrderStatusByIdSample
+    static class RetryPaymentSample
     {
         public async static Task<SdkResult> CallRequest(SDK sdk)
         {
             return await sdk.OrderService
-                .GetOrderStatusById("ORDER_REFENCE")
+                .RetryPayment("ORDER_REFENCE")
                 .Call();
         }
     }

@@ -5,15 +5,15 @@ using Tradeprint.Model;
 namespace Samples
 {
     /**
-     * Tradeprint API - Get Order Status by ID
-     * https://docs.sandbox.tradeprint.io/?version=latest#ca75104b-eb43-40f8-9205-109dc2297327
+     * Tradeprint API - Cancel an Order Item
+     * https://docs.sandbox.tradeprint.io/?version=latest#4dc388f6-26b4-4141-b71e-0885c3532dd0
      */
-    static class GetOrderStatusByIdSample
+    static class CancelOrderItemSample
     {
         public async static Task<SdkResult> CallRequest(SDK sdk)
         {
             return await sdk.OrderService
-                .GetOrderStatusById("ORDER_REFENCE")
+                .CancelOrderItem("ORDER_REFENCE", "ITEM_REFERENCE")
                 .Call();
         }
     }

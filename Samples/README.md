@@ -28,6 +28,9 @@ With those statements in place you can use the `productService` or the `orderSer
 
 You can use the main [Program.cs](Program.cs) entry point in the **Samples** project to test the sample requests individually or to construct call sequences.
 
+When you download the repository make sure you copy the `.env` file template from [EnvTemplate/.env](EnvTemplate/.env) to the top of the **Samples** project directory.
+Fill in the values with correct ones obtained from the Tradeprint API team and you are all set to run the code samples using the hanress provided.
+
 ## Samples
 
 The samples provided below reflect the calls available in the Tradeprint API (https://docs.sandbox.tradeprint.io).
@@ -35,10 +38,10 @@ The samples provided below reflect the calls available in the Tradeprint API (ht
 ### Order Service
 
 * [Submit New Order](SubmitNewOrderSample.cs)
-* [Validate Order](TODO)
-* [Upload or Replace Artwork](TODO)
+* [Validate Order](ValidateOrderSample.cs)
+* [Upload or Replace Artwork](UploadReplaceArtworkSample.cs)
 * [Get Order Status by ID](GetOrderStatusByIdSample.cs)
-* [Fetch Orders by References](TODO)
+* [Fetch Orders by References](FetchOrdersByReferenceSample.cs)
 * [Cancel an Order Item](TODO)
 * [Retry Payment](TODO)
 
