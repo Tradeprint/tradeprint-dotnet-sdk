@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -11,7 +11,7 @@
     <Company>Tradeprint</Company>
     <Product>Tradeprint SDK</Product>
     <Authors>Miroslaw Majka</Authors>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <PackageId>TradeprintSdk</PackageId>
     <AssemblyName>TradeprintSdk</AssemblyName>
     <RepositoryUrl>https://github.com/Tradeprint/tradeprint-dotnet-sdk</RepositoryUrl>

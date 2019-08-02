@@ -54,4 +54,4 @@ A solution configured with valid Production credentials and pointing at the Prod
 
 ## Usage
 
-For read the [Samples README](Samples/README.md) for usage details.
+For read the [Samples README](https://github.com/Tradeprint/tradeprint-dotnet-sdk/blob/master/Samples/README.md) for usage details.
